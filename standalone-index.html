@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temu Lucky Draw Portal - Win LKR 1,000,000 + Trip to China!</title>
+    <meta name="description" content="Join Temu Lucky Draw Portal! Win amazing prizes including LKR 1,000,000 and a trip to China. Only LKR 300 per ticket!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-orange': 'hsl(16, 100%, 60%)',
+                        'primary-red': 'hsl(354, 84%, 57%)',
+                        'secondary-yellow': 'hsl(45, 100%, 63%)',
+                        'success-green': 'hsl(158, 95%, 42%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, hsl(16, 100%, 60%), hsl(354, 84%, 57%));
+        }
+        .gradient-secondary {
+            background: linear-gradient(135deg, hsl(45, 100%, 63%), hsl(16, 100%, 60%));
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, hsl(16, 100%, 60%), hsl(354, 84%, 57%));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-primary {
+            background: linear-gradient(to right, hsl(16, 100%, 60%), hsl(354, 84%, 57%));
+            color: white;
+            font-weight: bold;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background: linear-gradient(to right, hsl(45, 100%, 63%), hsl(16, 100%, 60%));
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+        }
+        .ticket-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            border: 4px solid transparent;
+            background-clip: padding-box;
+        }
+        .animate-pulse-fast {
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+        body {
+            background: linear-gradient(to bottom right, #fff7ed, #fef3c7, #fee2e2);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center">
+                        <span class="text-white text-lg">🎫</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gradient-primary">
+                        Temu Lucky Draw Portal
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">
+                        <span class="text-green-600">👥</span>
+                        <span class="text-green-600 font-semibold">1,247</span>
+                        <span class="text-green-600 text-sm">Online</span>
+                    </div>
+                    <button onclick="sharePortal()" class="btn-secondary flex items-center space-x-2">
+                        <span>📤</span>
+                        <span>Share & Win More</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-200/20 via-yellow-200/20 to-red-200/20"></div>
+        <div class="container mx-auto px-4 py-12 relative">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center bg-red-100 text-red-600 px-4 py-2 rounded-full mb-6 animate-pulse-fast">
+                    <span class="mr-2">📈</span>
+                    <span class="font-semibold">HOT! Limited Time Offer</span>
+                </div>
+                
+                <h2 class="text-4xl md:text-6xl font-black mb-6 text-gradient-primary">
+                    WIN BIG TODAY!
+                </h2>
+                
+                <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium">
+                    Get your lucky ticket for just <span class="font-bold" style="color: hsl(16, 100%, 60%);">LKR 300</span> 
+                    and win amazing prizes! <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-lg font-bold">Every ticket has a gift!</span>
+                </p>
+
+                <!-- Gift Guarantee Banner -->
+                <div class="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-3xl p-6 mb-6 border-2 border-yellow-300">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2 flex items-center justify-center">
+                            <span class="mr-2">🎁</span>
+                            100% GIFT GUARANTEE!
+                        </h3>
+                        <p class="text-orange-600 text-lg font-semibold">
+                            Every single ticket comes with a guaranteed gift! No losing tickets - everyone wins something!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Share Banner -->
+                <div class="bg-gradient-to-r from-green-100 to-emerald-100 rounded-3xl p-6 mb-8 border-2 border-green-200">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-green-700 mb-2 flex items-center justify-center">
+                            <span class="mr-2">📤</span>
+                            Special Offer: Share with 10 People & Get More Gifts!
+                        </h3>
+                        <p class="text-green-600 mb-4">
+                            Share this link with 10 friends and unlock exclusive bonus prizes and extra chances to win!
+                        </p>
+                        <button onclick="sharePortal()" class="bg-gradient-to-r from-green-500 to-green-400 text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-200 flex items-center space-x-2 mx-auto">
+                            <span>📤</span>
+                            <span>Share Now: https://mndewmi.com</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Banner -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="text-2xl font-bold" style="color: hsl(16, 100%, 60%);">₹2.4M</div>
+                        <div class="text-sm text-gray-600">Total Winnings</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="text-2xl font-bold text-green-600">10,124</div>
+                        <div class="text-sm text-gray-600">Tickets Sold</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="text-2xl font-bold" style="color: hsl(354, 84%, 57%);">4,520</div>
+                        <div class="text-sm text-gray-600">Happy Winners</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="text-2xl font-bold" style="color: hsl(45, 100%, 63%);">4h 23m</div>
+                        <div class="text-sm text-gray-600">Next Draw</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Ticket Purchase Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Ticket Card -->
+            <div class="ticket-card mb-8">
+                <div class="gradient-primary p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Lucky Draw Ticket</h3>
+                            <p class="opacity-90">Your chance to win amazing prizes!</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-black">LKR 300</div>
+                            <div class="text-sm opacity-90">≈ $1.00 USD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <!-- Countdown Timer -->
+                    <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 mb-8 border-2 border-red-200">
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold text-red-600 mb-4 flex items-center justify-center">
+                                <span class="mr-2">⏰</span>
+                                Drawing Ends In:
+                            </h4>
+                            <div id="countdown" class="grid grid-cols-4 gap-4">
+                                <div class="bg-white rounded-xl p-4 shadow-lg">
+                                    <div id="days" class="text-2xl md:text-3xl font-black text-red-600">07</div>
+                                    <div class="text-sm text-gray-600 font-semibold">DAYS</div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-lg">
+                                    <div id="hours" class="text-2xl md:text-3xl font-black text-red-600">00</div>
+                                    <div class="text-sm text-gray-600 font-semibold">HOURS</div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-lg">
+                                    <div id="minutes" class="text-2xl md:text-3xl font-black text-red-600">00</div>
+                                    <div class="text-sm text-gray-600 font-semibold">MINUTES</div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-lg">
+                                    <div id="seconds" class="text-2xl md:text-3xl font-black text-red-600">00</div>
+                                    <div class="text-sm text-gray-600 font-semibold">SECONDS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prize Information -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-gray-800 flex items-center">
+                                <span class="mr-2">🎁</span>
+                                What You Get:
+                            </h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                    <span>Unique 4-digit lucky number</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                    <span>7-day valid ticket</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                    <span>Email confirmation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                    <span>Guaranteed gift with every ticket</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-gray-800 flex items-center">
+                                <span class="mr-2">🏆</span>
+                                Prize Pool:
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg">
+                                    <span class="font-semibold">🥇 Grand Prize</span>
+                                    <span class="font-bold" style="color: hsl(16, 100%, 60%);">LKR 1,000,000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg">
+                                    <span class="font-semibold">🎯 Special Prize</span>
+                                    <span class="font-bold text-purple-600">Trip to China</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
+                                    <span class="font-semibold">🥈 Second Prize</span>
+                                    <span class="font-bold text-blue-600">LKR 25,000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg">
+                                    <span class="font-semibold">🥉 Third Prize</span>
+                                    <span class="font-bold text-green-600">LKR 10,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Purchase Form -->
+                    <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-6">
+                        <form id="ticketForm" onsubmit="submitForm(event)" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Your Email
+                                    </label>
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="your@email.com"
+                                        required
+                                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-200"
+                                    />
+                                </div>
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Your Name
+                                    </label>
+                                    <input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Your Full Name"
+                                        required
+                                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-200"
+                                    />
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl p-4 border-2 border-dashed border-orange-300">
+                                <div class="text-center">
+                                    <div class="text-sm text-gray-600 mb-2">Your Lucky Numbers Will Be:</div>
+                                    <div class="text-3xl font-black" style="color: hsl(16, 100%, 60%);">
+                                        <span id="luckyNumbers">####</span>
+                                        <span class="text-sm text-gray-500 ml-2">(Generated after purchase)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="submitBtn"
+                                class="w-full btn-primary text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 py-4 px-8 rounded-2xl"
+                            >
+                                <span>🛒</span>
+                                <span>BUY NOW - LKR 300</span>
+                                <span>➡️</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Winners -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="text-yellow-500 mr-3">⭐</span>
+                    Recent Winners
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold">
+                                J
+                            </div>
+                            <div>
+                                <div class="font-semibold">John D.</div>
+                                <div class="text-sm text-gray-600">
+                                    Lucky Numbers: <span class="font-mono font-bold">7892</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold" style="color: hsl(16, 100%, 60%);">LKR 25,000</div>
+                            <div class="text-sm text-gray-500">2 hours ago</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-400 rounded-full flex items-center justify-center text-white font-bold">
+                                S
+                            </div>
+                            <div>
+                                <div class="font-semibold">Sarah M.</div>
+                                <div class="text-sm text-gray-600">
+                                    Lucky Numbers: <span class="font-mono font-bold">3456</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-green-600">LKR 10,000</div>
+                            <div class="text-sm text-gray-500">5 hours ago</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold">
+                                R
+                            </div>
+                            <div>
+                                <div class="font-semibold">Raj P.</div>
+                                <div class="text-sm text-gray-600">
+                                    Lucky Numbers: <span class="font-mono font-bold">9123</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-blue-600">LKR 5,000</div>
+                            <div class="text-sm text-gray-500">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">How It Works</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1</div>
+                        <h4 class="font-bold text-lg mb-2">Buy Ticket</h4>
+                        <p class="text-gray-600 text-sm">Purchase your lucky ticket for just LKR 300</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">2</div>
+                        <h4 class="font-bold text-lg mb-2">Get Numbers</h4>
+                        <p class="text-gray-600 text-sm">Receive your unique 4-digit lucky numbers via email</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-400 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">3</div>
+                        <h4 class="font-bold text-lg mb-2">Wait & Watch</h4>
+                        <p class="text-gray-600 text-sm">Your ticket is valid for 7 days from purchase</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-400 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">4</div>
+                        <h4 class="font-bold text-lg mb-2">Win Big!</h4>
+                        <p class="text-gray-600 text-sm">Check if your numbers match and claim your prize</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-primary rounded-full flex items-center justify-center">
+                            <span class="text-white">🎫</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Temu Lucky Draw Portal</h3>
+                    </div>
+                    <p class="text-gray-400">Your trusted platform for exciting lottery experiences and amazing prizes.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">How to Play</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">Winners</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">Rules</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition-colors">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Stay Connected</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-red-500 transition-colors">
+                            <span class="text-sm font-bold">f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-red-500 transition-colors">
+                            <span class="text-sm font-bold">t</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-red-500 transition-colors">
+                            <span class="text-sm font-bold">i</span>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">Get updates on new draws and special offers!</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Temu Lucky Draw Portal. All rights reserved. | Licensed Gaming Operator</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-4xl">✓</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Ticket Purchased Successfully!
+                </h3>
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 mb-6">
+                    <div class="text-sm text-gray-600 mb-2">Your Lucky Numbers:</div>
+                    <div id="modalLuckyNumbers" class="text-4xl font-black text-green-600">
+                        ####
+                    </div>
+                    <div class="text-sm text-gray-600 mt-2">
+                        Valid for 7 days from today
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">
+                    Your Lucky number set a mail after Buy. Good luck! 🍀
+                </p>
+                <button onclick="closeModal()" class="w-full gradient-primary text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-200">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7);
+            
+            const now = new Date().getTime();
+            const distance = endDate.getTime() - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+        }
+
+        // Share Portal Function
+        function sharePortal() {
+            const shareText = "🎉 Join Temu Lucky Draw Portal! Win LKR 1,000,000 + Trip to China! Share with 10 people to get more gifts! ";
+            const shareUrl = "https://mndewmi.com";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Temu Lucky Draw Portal',
+                    text: shareText,
+                    url: shareUrl,
+                });
+            } else {
+                navigator.clipboard.writeText(shareText + shareUrl).then(() => {
+                    alert('Share link copied to clipboard!');
+                });
+            }
+        }
+
+        // Form Submission
+        async function submitForm(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            
+            // Generate lucky numbers
+            const luckyNumbers = Math.floor(1000 + Math.random() * 9000).toString();
+            
+            // Update UI
+            submitBtn.innerHTML = '<span>⏳</span><span>Processing...</span>';
+            submitBtn.disabled = true;
+            
+            try {
+                // Submit to Formspree
+                await fetch('https://formspree.io/f/mvgrdewb', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        name: name,
+                        lucky_numbers: luckyNumbers,
+                        subject: `🎫 Temu Lucky Draw Ticket - Lucky Numbers: ${luckyNumbers}`,
+                        message: `Congratulations ${name}! Your Temu Lucky Draw ticket has been purchased successfully. 
+
+Lucky Numbers: ${luckyNumbers}
+Email: ${email}
+Valid for: 7 days from today
+
+🏆 Prize Pool:
+🥇 Grand Prize: LKR 1,000,000
+🎯 Special Prize: Trip to China
+🥈 Second Prize: LKR 25,000
+🥉 Third Prize: LKR 10,000
+
+🎁 100% GIFT GUARANTEE - Every ticket has a guaranteed gift!
+
+Share with 10 friends at https://mndewmi.com for bonus prizes!
+
+Good luck!`,
+                    }),
+                });
+                
+                // Show success modal
+                document.getElementById('modalLuckyNumbers').textContent = luckyNumbers;
+                document.getElementById('successModal').classList.remove('hidden');
+                
+                // Reset form
+                document.getElementById('ticketForm').reset();
+                
+                // Redirect to payment after delay
+                setTimeout(() => {
+                    window.open('https://www.temudewmi.lk', '_blank');
+                }, 3000);
+                
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            } finally {
+                submitBtn.innerHTML = '<span>🛒</span><span>BUY NOW - LKR 300</span><span>➡️</span>';
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // Initialize countdown
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
